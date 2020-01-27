@@ -1,19 +1,25 @@
 import React, { useContext } from "react";
 import { ExpenseContext } from "../context/ExpensesContext";
 import ExpensesMap from "../components/ExpensesMap";
+import { MeteorRainLoading } from "react-loadingg";
+import "../styles/styles.scss";
 
 const UserExpenses = props => {
   const expensesContext = useContext(ExpenseContext);
 
   return (
     <React.Fragment>
-      {expensesContext.expenses.map(exp => {
-        return (
-          <div key={exp.id}>
-            <ExpensesMap expenseInfo={exp} />
-          </div>
-        );
-      })}
+      {expensesContext.expenses.length !== 0 ? (
+        expensesContext.expenses.map(exp => {
+          return (
+            <div key={exp.id} className="Exp-container">
+              <ExpensesMap expenseInfo={exp} />
+            </div>
+          );
+        })
+      ) : (
+        <MeteorRainLoading color="#f36" />
+      )}
     </React.Fragment>
   );
 };

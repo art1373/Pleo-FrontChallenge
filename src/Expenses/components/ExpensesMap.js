@@ -6,9 +6,12 @@ const ExpensesMap = props => {
 
   return (
     <ExpenseCard
-      firstName={expenseInfo.user.first}
-      lastName={expenseInfo.user.last}
-      email={expenseInfo.user.email}
+      user={`${expenseInfo.user.first}' '${expenseInfo.user.last}`}
+      date={expenseInfo.date}
+      merchant={expenseInfo.merchant}
+      amount={expenseInfo.amount.value}
+      currency={expenseInfo.amount.currency}
+      photo={expenseInfo.user.image}
     />
   );
 };

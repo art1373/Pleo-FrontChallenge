@@ -12,16 +12,18 @@ function App() {
     Axios.get(`${Routes.GetExpenses}`)
       .then(res => {
         let json = res.data.expenses;
-        return setExpenses(json);
+        setTimeout(() => {
+          return setExpenses(json);
+        }, 2000);
       })
       .catch(err => {
         console.log(err.response);
       });
-  }, [expenses]);
+  }, []);
 
   return (
     <div className="App">
-      <ExpenseContext.Provider value={{expenses}}>
+      <ExpenseContext.Provider value={{ expenses }}>
         <UserExpenses />
       </ExpenseContext.Provider>
     </div>
