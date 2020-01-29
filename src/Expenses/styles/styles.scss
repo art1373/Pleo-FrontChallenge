@@ -55,7 +55,7 @@ img {
 
 .card-container {
   width: 400px;
-  height: 33vh;
+  height: 305px;
   background: $color-white;
   -webkit-box-shadow: 2px 5px 7px 0px rgba(184, 165, 184, 0.91);
   -moz-box-shadow: 2px 5px 7px 0px rgba(184, 165, 184, 0.91);
@@ -63,6 +63,7 @@ img {
   border-radius: 20px;
   @include for-phone-only {
     width: 90vw;
+    height: 245px;
   }
 }
 
@@ -96,9 +97,14 @@ img {
 }
 
 .card-body {
-  background: "#2e86ff";
   font-family: "Dubai";
+  height: 10%;
   font-weight: bold;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  padding: 30px 8px;
+
   .avatar {
     width: 60px;
     height: 60px;
@@ -109,9 +115,9 @@ img {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
-  margin-top: 6em;
+  margin-top: 5em;
   @include for-phone-only {
-    margin: 2em;
+    margin: 2.5em;
   }
 }
 .btn {
@@ -129,4 +135,63 @@ img {
   .btntxt {
     padding-top: 9px;
   }
+}
+// Modal style
+.modal {
+  z-index: 100;
+  position: fixed;
+  top: 22vh;
+  left: 10%;
+  width: 80%;
+  background: white;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
+  border-radius: 8px;
+}
+
+.modal__header {
+  width: 100%;
+  padding: 1rem 0.5rem;
+  background: #2a006e;
+  color: white;
+}
+
+.modal__header h2 {
+  margin: 0.5rem;
+}
+
+.modal__content {
+  padding: 1rem 0.5rem;
+}
+
+.modal__footer {
+  padding: 1rem 0.5rem;
+}
+
+@media (min-width: 768px) {
+  .modal {
+    left: calc(50% - 20rem);
+    width: 40rem;
+  }
+}
+
+.modal-enter {
+  transform: translateY(-10rem);
+  opacity: 0;
+}
+
+.modal-enter-active {
+  transform: translateY(0);
+  opacity: 1;
+  transition: all 200ms;
+}
+
+.modal-exit {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.modal-exit-active {
+  transform: translateY(-10rem);
+  opacity: 0;
+  transition: all 200ms;
 }

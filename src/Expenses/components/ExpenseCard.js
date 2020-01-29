@@ -4,8 +4,12 @@ import dateLogo from "../../assets/Icons/history.svg";
 import merchant from "../../assets/Icons/credit-card.svg";
 import moment from "moment";
 import Button from "./Button";
+import { ModalContext } from "../context/ModalContext";
+
 
 const ExpenseCard = props => {
+  const ModalShow = React.useContext(ModalContext);
+
   return (
     <div className="card-container">
       <div className="card-heading">
@@ -28,15 +32,18 @@ const ExpenseCard = props => {
       </div>
       <div className="card-body">
         <img className="avatar" src={props.photo} alt="user-avatar" />
-        {/* user pic*/} {props.user}
-        {props.amount}
-        {props.currency}
+        <div className="user-amount">
+          {props.user}
+          <br />
+          {props.amount}&nbsp;
+          {props.currency}
+        </div>
       </div>
       <div className="btnContainer">
         <Button
           title="Add Comment"
           onClick={() => {
-            alert("click");
+            ModalShow.setShowModal(true)
           }}
         />
         <Button
