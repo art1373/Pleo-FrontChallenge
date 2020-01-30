@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import { ExpenseContext } from "../context/ExpensesContext";
 
 import ExpensesMap from "../components/ExpensesMap";
-import { MeteorRainLoading } from "react-loadingg";
+import { BoxLoading } from "react-loadingg";
 import "../styles/styles.scss";
 
 const UserExpenses = props => {
@@ -18,7 +18,7 @@ const UserExpenses = props => {
           );
         })
       ) : (
-        <MeteorRainLoading color="#f36" />
+        <BoxLoading color="#f36" />
       )}
     </React.Fragment>
   );

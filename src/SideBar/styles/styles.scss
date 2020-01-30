@@ -1,0 +1,38 @@
+$color-white: #f3f4f6;
+$color-pleo: #f36;
+$color-blue: #2c86ff;
+// responsive mixins
+@mixin for-phone-only {
+  @media (max-width: 599px) {
+    @content;
+  }
+}
+@mixin for-tablet-portrait-up {
+  @media (min-width: 600px) {
+    @content;
+  }
+}
+@mixin for-tablet-landscape-up {
+  @media (min-width: 900px) {
+    @content;
+  }
+}
+@mixin for-desktop-up {
+  @media (min-width: 1200px) {
+    @content;
+  }
+}
+@mixin for-big-desktop-up {
+  @media (min-width: 1800px) {
+    @content;
+  }
+}
+
+.container {
+  display: flex;
+  width: 100vw;
+  height: 5vh;
+  background: #f3f4f6;
+  justify-content: space-evenly;
+  font-family: 'TwCent';
+}

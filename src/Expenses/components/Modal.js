@@ -2,12 +2,15 @@ import React from "react";
 import ReactDom from "react-dom";
 import "../styles/styles.scss";
 
+import Button from "./Button";
+
 const Modal = props => {
   const content = (
     <React.Fragment>
       <div className="modal">
         <h1>{props.first}</h1>
         <h1>{props.last}</h1>
+        <Button title="Submit" />
       </div>
     </React.Fragment>
   );

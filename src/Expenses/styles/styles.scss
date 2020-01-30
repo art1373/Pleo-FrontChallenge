@@ -28,18 +28,6 @@ $color-blue: #2c86ff;
   }
 }
 
-@font-face {
-  font-family: "Berlin Sans";
-  src: url("../../assets/fonts/BerlinSans.ttf");
-}
-@font-face {
-  font-family: "TwCent";
-  src: url("../../assets/fonts/TwCent.otf");
-}
-@font-face {
-  font-family: "Dubai";
-  src: url("../../assets/fonts/DubaiRegular.ttf");
-}
 img {
   width: 20px;
   height: 20px;
@@ -138,7 +126,7 @@ img {
 }
 // Modal style
 .modal {
-  z-index: 100;
+  // z-index: 100;
   position: fixed;
   top: 22vh;
   left: 10%;

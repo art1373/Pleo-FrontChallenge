@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "../styles/styles.scss";
 import dateLogo from "../../assets/Icons/history.svg";
 import merchant from "../../assets/Icons/credit-card.svg";
@@ -6,9 +6,9 @@ import moment from "moment";
 import Button from "./Button";
 import { ModalContext } from "../context/ModalContext";
 
-
 const ExpenseCard = props => {
   const ModalShow = React.useContext(ModalContext);
+  const [reciept, setReciept] = useState([]);
 
   return (
     <div className="card-container">
@@ -38,20 +38,29 @@ const ExpenseCard = props => {
           {props.amount}&nbsp;
           {props.currency}
         </div>
+        <div>
+          {reciept.length === 0 ? (
+            <p>No Reciepts Uploaded!</p>
+          ) : (
+            <img src={reciept} alt={reciept} />
+          )}
+        </div>
       </div>
       <div className="btnContainer">
-        <Button
-          title="Add Comment"
-          onClick={() => {
-            ModalShow.setShowModal(true)
-          }}
-        />
-        <Button
-          title="Upload Reciept"
-          onClick={() => {
-            alert("click");
-          }}
-        />
+        <Button title="Add Comment" onClick={() => {}} />
+        <div>
+          <label>
+            <Button title="Upload Reciept" />
+            <input
+              accept="image/*"
+              type="file"
+              style={{ display: "none" }}
+              onChange={async e =>
+                await setReciept(URL.createObjectURL(e.target.files[0]))
+              }
+            />
+          </label>
+        </div>
       </div>
     </div>
   );
