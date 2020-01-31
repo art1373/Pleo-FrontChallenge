@@ -31,12 +31,13 @@ $color-blue: #2c86ff;
 .container {
   width: 100vw;
   height: 5vh;
-  background: #f3f4f6;
+  background: $color-pleo;
 }
 .content {
   display: flex;
   justify-content: space-evenly;
   font-family: "TwCent";
+  color: $color-white;
   @include for-phone-only {
     display: none;
   }

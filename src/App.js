@@ -13,13 +13,13 @@ function App() {
   return (
     <div className="App">
       <ExpenseProivder>
-        <Header />
-        <SideBar pageWrapId={"page-wrap"} outerContainerId={"App"} />
-        <UserExpenses />
+        <ModalProvider>
+          <Header />
+          <SideBar pageWrapId={"page-wrap"} outerContainerId={"App"} />
+          <UserExpenses />
+          <CardModal />
+        </ModalProvider>
       </ExpenseProivder>
-      <ModalProvider>
-        <CardModal />
-      </ModalProvider>
     </div>
   );
 }

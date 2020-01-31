@@ -3,14 +3,20 @@ import ReactDom from "react-dom";
 import "../styles/styles.scss";
 
 import Button from "./Button";
+import { useModalState, useModalDisptach } from "../context/ModalContext";
 
 const Modal = props => {
+  const dispatch = useModalDisptach();
+  const modalState = useModalState();
   const content = (
     <React.Fragment>
       <div className="modal">
-        <h1>{props.first}</h1>
-        <h1>{props.last}</h1>
-        <Button title="Submit" />
+        <p>{modalState.id}</p>
+        <textarea></textarea>
+        <Button
+          title="Submit"
+          onClick={() => dispatch({ type: "HideModal" })}
+        />
       </div>
     </React.Fragment>
   );
@@ -18,10 +24,11 @@ const Modal = props => {
 };
 
 const CardModal = props => {
+  const modalState = useModalState();
   return (
     <React.Fragment>
-      {props.visible === true && (
-        <div onClick={props.closeModal}>
+      {modalState.modalVisible === true && (
+        <div>
           <Modal {...props} />
         </div>
       )}

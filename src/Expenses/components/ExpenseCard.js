@@ -4,12 +4,11 @@ import dateLogo from "../../assets/Icons/history.svg";
 import merchant from "../../assets/Icons/credit-card.svg";
 import moment from "moment";
 import Button from "./Button";
-import { ModalContext } from "../context/ModalContext";
+import { useModalDisptach } from "../context/ModalContext";
 
 const ExpenseCard = props => {
-  const ModalShow = React.useContext(ModalContext);
   const [reciept, setReciept] = useState([]);
-
+  const dispatch = useModalDisptach();
   return (
     <div className="card-container">
       <div className="card-heading">
@@ -47,7 +46,12 @@ const ExpenseCard = props => {
         </div>
       </div>
       <div className="btnContainer">
-        <Button title="Add Comment" onClick={() => {}} />
+        <Button
+          title="Add Comment"
+          onClick={() => {
+            dispatch({ type: "ShowModal", payload: props.id });
+          }}
+        />
         <div>
           <label>
             <Button title="Upload Reciept" />

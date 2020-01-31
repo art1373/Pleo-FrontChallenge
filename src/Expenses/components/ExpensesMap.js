@@ -6,6 +6,7 @@ const ExpensesMap = props => {
   return (
     <React.Fragment>
       <ExpenseCard
+        id={expenseInfo.id}
         user={`${expenseInfo.user.first} ${expenseInfo.user.last}`}
         date={expenseInfo.date}
         merchant={expenseInfo.merchant}
