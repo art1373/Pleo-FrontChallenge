@@ -13,6 +13,7 @@ const ExpensesMap = props => {
         amount={expenseInfo.amount.value}
         currency={expenseInfo.amount.currency}
         photo={expenseInfo.user.image}
+        comment={expenseInfo.comment}
         reciept={expenseInfo.receipts}
       />
     </React.Fragment>

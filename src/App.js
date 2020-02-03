@@ -15,7 +15,7 @@ function App() {
       <ExpenseProivder>
         <ModalProvider>
           <Header />
-          <SideBar pageWrapId={"page-wrap"} outerContainerId={"App"} />
+          <SideBar />
           <UserExpenses />
           <CardModal />
         </ModalProvider>

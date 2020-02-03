@@ -38,13 +38,14 @@ const ExpenseCard = props => {
           {props.currency}
         </div>
         <div>
-          {reciept.length === 0 ? (
-            <p>No Reciepts Uploaded!</p>
-          ) : (
-            <img src={reciept} alt={reciept} />
-          )}
+          <img className="reciept" src={reciept} alt={reciept} />
         </div>
       </div>
+
+      <div className="avatar-comment">
+        {props.comment !== "" ? `Comments: ${props.comment}` : "No Comments!"}
+      </div>
+
       <div className="btnContainer">
         <Button
           title="Add Comment"
