@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import ReactDom from "react-dom";
 import "../styles/styles.scss";
 
-import Button from "./Button";
+import Button from "./ModalBtn";
 import { useModalState, useModalDisptach } from "../context/ModalContext";
 import Axios from "axios";
 import Routes from "../../api/Routes";
@@ -37,7 +37,7 @@ const Modal = props => {
     <React.Fragment>
       <div className="modal">
         <textarea onChange={e => setComment(e.target.value)}></textarea>
-        <div className="modalBtn">
+        <div className="modalBtnContainer">
           <Button title="Submit" onClick={AddComment} />
           <Button
             title="Close Modal"

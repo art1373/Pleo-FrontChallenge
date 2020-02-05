@@ -5,10 +5,29 @@ import merchant from "../../assets/Icons/credit-card.svg";
 import moment from "moment";
 import Button from "./Button";
 import { useModalDisptach } from "../context/ModalContext";
+import Axios from "axios";
+import Routes from "../../api/Routes";
 
 const ExpenseCard = props => {
   const [reciept, setReciept] = useState([]);
   const dispatch = useModalDisptach();
+
+  const handleRecieptChange = e => {
+    let id = props.id;
+    e.preventDefault();
+    let reciept = e.target.files[0];
+    setReciept(reciept);
+    let formData = new FormData();
+    formData.append("receipt", reciept);
+    Axios.post(`${Routes.AddReciept}${id}`, formData)
+      .then(res => {
+        console.log(res);
+      })
+      .catch(err => {
+        console.log(err.response);
+      });
+  };
+  // ------------------------------------
   return (
     <div className="card-container">
       <div className="card-heading">
@@ -38,7 +57,7 @@ const ExpenseCard = props => {
           {props.currency}
         </div>
         <div>
-          <img className="reciept" src={reciept} alt={reciept} />
+          <img className="reciept" src={props.reciept[0]} alt={reciept} />
         </div>
       </div>
 
@@ -60,9 +79,7 @@ const ExpenseCard = props => {
               accept="image/*"
               type="file"
               style={{ display: "none" }}
-              onChange={async e =>
-                await setReciept(URL.createObjectURL(e.target.files[0]))
-              }
+              onChange={e => handleRecieptChange(e)}
             />
           </label>
         </div>

@@ -141,12 +141,25 @@ img {
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
   border-radius: 8px;
 }
-.modalBtn {
+.modalBtnContainer {
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
   flex-wrap: wrap;
   padding: 5p;
+}
+.btn-modal {
+  background: $color-blue;
+  width: 8em;
+  height: 30px;
+  border-radius: 10px;
+  text-align: center;
+  line-height: 1.7rem;
+  color: #fff;
+  &:hover {
+    background-color: $color-pleo;
+    cursor: pointer;
+  }
 }
 .elements {
   display: flex;
@@ -163,14 +176,31 @@ textarea {
   border: none;
   border-radius: 10px;
   resize: none;
+  outline: none;
 }
 .avatar-comment {
   font-family: "TwCent";
   color: blue;
   padding-top: 15px;
 }
-.reciept{
+.reciept {
   width: 70px;
   height: 90px;
   border-radius: 10px;
+}
+input {
+  width: 50%;
+  border-radius: 15px;
+  outline: none;
+  border: none;
+  height: 2rem;
+  text-align: center;
+  font-family: TwCent;
+  font-size: 1rem;
+  color: #f36;
+}
+.searchIcon {
+  position: absolute;
+  z-index: 2;
+  margin: 7px -2.2rem;
 }
