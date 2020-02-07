@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "../styles/styles.scss";
+import Swal from "sweetalert2";
 import dateLogo from "../../assets/Icons/history.svg";
 import merchant from "../../assets/Icons/credit-card.svg";
 import moment from "moment";
@@ -10,6 +11,7 @@ import Routes from "../../api/Routes";
 
 const ExpenseCard = props => {
   const [reciept, setReciept] = useState([]);
+  const [previewImg, setPreviewImage] = useState("");
   const dispatch = useModalDisptach();
 
   const handleRecieptChange = e => {
@@ -17,14 +19,31 @@ const ExpenseCard = props => {
     e.preventDefault();
     let reciept = e.target.files[0];
     setReciept(reciept);
+    let reader = new FileReader();
+    if (reciept) {
+      reader.readAsDataURL(reciept);
+    }
     let formData = new FormData();
     formData.append("receipt", reciept);
     Axios.post(`${Routes.AddReciept}${id}`, formData)
       .then(res => {
         console.log(res);
+        Swal.fire({
+          title: "Receipt Uploaded Succesfully",
+          html: `<img class="recieptImg" src='` + reader.result + `' />`
+        }).then(result => {
+          if (result.value) {
+            setPreviewImage(reader.result);
+          }
+        });
       })
       .catch(err => {
         console.log(err.response);
+        Swal.fire({
+          icon: "error",
+          title: "Oops...",
+          text: "Something went wrong!"
+        });
       });
   };
   // ------------------------------------
@@ -57,7 +76,20 @@ const ExpenseCard = props => {
           {props.currency}
         </div>
         <div>
-          <img className="reciept" src={props.reciept[0]} alt={reciept} />
+          <img
+            className="reciept"
+            src={
+              props.reciept[0] === undefined
+                ? null
+                : `http://localhost:3000${props.reciept[0].url}`
+            }
+            alt={reciept}
+          />
+        </div>
+        <div>
+          {previewImg !== "" ? (
+            <img className="reciept" src={previewImg} alt={"preview"} />
+          ) : null}
         </div>
       </div>
 

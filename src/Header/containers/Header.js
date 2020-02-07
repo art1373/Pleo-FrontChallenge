@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 import "../styles/styles.scss";
 import { ExpenseContext } from "../../Expenses/context/ExpensesContext";
 
+import { MdRefresh } from "react-icons/md";
 const Header = props => {
   const ExpenseProvider = useContext(ExpenseContext);
 
@@ -33,6 +34,13 @@ const Header = props => {
               : Math.round(Number(total));
           }, 0)}
         </p>
+        <div style={{ marginTop: "10px" }}>
+          <MdRefresh
+            size={20}
+            style={{ cursor: "pointer" }}
+            onClick={() => window.location.reload()}
+          />
+        </div>
       </div>
     </div>
   );
