@@ -1,6 +1,7 @@
 {
   "name": "pleo-front-alireza",
   "version": "0.1.0",
+  "homepage": "https://github.com/art1373/Pleo-FrontChallenge",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",

@@ -1,4 +1,4 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is my version of Pleo Front End Challange 
 
 ## Available Scripts
 
