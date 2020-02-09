@@ -1,7 +1,7 @@
 [![CircleCI](https://circleci.com/gh/art1373/Pleo-FrontChallenge.svg)](https://https://github.com/art1373?tab=repositories)
 
 This is my version of Pleo Front End Challange.
-
+firstly clone and run api https://github.com/art1373/pleo-api
 ## Brief Description
 
 I used Reactjs and got use of <=> 16 version features Hooks. also used Sass as a css preprocessor and Context Api as my state manager.
