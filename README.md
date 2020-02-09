@@ -27,5 +27,7 @@ the update of comments and communication between context store and the component
 The way I set modal context for comments. the Design of the front end. the header reducer of different currencies total amount.<br />
 the animation of the search bar was really fun too.
 ## What Its Lack 
-I lacks localization and typescript in the project. I also think I should have done better on filtering implementation. I could have setup a stand alone context for my filtering and a clean reducer.
+I lacks localization and typescript in the project. 
 
+## What I think I need improvment after I done this project
+I think I should have done better on filtering implementation. I could have setup a stand alone context for my filtering and a clean reducer. and ofcourse my all time weaknes "Wrting good tests".
