@@ -1,3 +1,4 @@
+[![CircleCI](https://circleci.com/gh/art1373/Pleo-FrontChallenge.svg)](https://https://github.com/art1373?tab=repositories)
 This is my version of Pleo Front End Challange.
 
 ## Brief Description
