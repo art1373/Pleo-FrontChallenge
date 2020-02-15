@@ -15,7 +15,7 @@ can Add Comment and Upload Receipts as well.I used netlify CD for deployment (th
 the hardest part was how to setup the architecture of the project. what kind of desing pattern I would choose? (I went with feature first).<br />
 the update of comments and communication between context store and the components was a hard part too.
 ## Packages I used
-    "axios" : for api calls.<br /> 
+    "axios" : for api calls.
     "moment": "^2.24.0", to convert the date to my desired format
     "node-sass": "^4.13.1", preprocessor
     "react-burger-menu": "^2.6.13", the sidebar
