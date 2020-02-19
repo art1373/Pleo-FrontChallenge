@@ -7,7 +7,7 @@ firstly clone and run api https://github.com/art1373/pleo-api
 I used Reactjs and got use of <=> 16 version features Hooks. also used Sass as a css preprocessor and Context Api as my state manager.
 the project is fully responsive and I add a little sidebar for visual consistency.<br /> I also designed and implemented the Card of the expenses myself.
 The user can see all listing expenses, can filter them via search and different Currencies
-can Add Comment and Upload Receipts as well.I used netlify CD for deployment (the api should run locally though) and Buddy Pipeline to run the CI/CD Tests as well. I also deployed to Travis CI.
+can Add Comment and Upload Receipts as well.I used netlify CD for deployment (the api should run locally though) and Buddy Pipeline to run the CI/CD Tests as well. I also deployed to Circle CI.
 ## How long did it take?
   it took me About a Week with my daytime dev job. it could have been shorter but I did my best :).
 
