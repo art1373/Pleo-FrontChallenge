@@ -1,4 +1,6 @@
 [![CircleCI](https://circleci.com/gh/art1373/Pleo-FrontChallenge.svg)](https://https://github.com/art1373?tab=repositories)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/df372e22-32cc-4c68-afa2-d9a3aac648b0/deploy-status)](https://app.netlify.com/sites/pleo-alireza/deploys)
+
 
 This is my version of Pleo Front End Challange.
 firstly clone and run api https://github.com/art1373/pleo-api
